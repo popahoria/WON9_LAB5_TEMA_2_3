@@ -46,20 +46,21 @@ public class Main {
             System.out.println("Your matched numbers are: " + guessedNum);
 
             if (guessedNum.containsAll(winningNum)) {
-                System.out.println("!!!!!!!!!!!!!  CONGRATS !!!!!!!!!!!!!!!");
+                System.out.println("!!!!!!!!!!!!!  CONGRATS  !!!!!!!!!!!!!!");
                 System.out.println("=============   6 0f 6   ==============");
                 System.out.println("\n");
-                countSix += totalCount;
+                countSix ++;
+
 
             } else if (guessedNum.size() == 4 && countFour == 0) {
-                System.out.println("!!!!!!!!!!!!!  CONGRATS !!!!!!!!!!!!!!!");
+                System.out.println("!!!!!!!!!!!!!  CONGRATS  !!!!!!!!!!!!!!");
                 System.out.println("=============   4 0f 6   ==============");
                 System.out.println("\n");
                 countFour += totalCount;
 
 
             } else if (guessedNum.size() == 5 && countFive == 0) {
-                System.out.println("!!!!!!!!!!!!!  CONGRATS !!!!!!!!!!!!!!!");
+                System.out.println("!!!!!!!!!!!!!  CONGRATS  !!!!!!!!!!!!!!");
                 System.out.println("=============   5 0f 6   ==============");
                 System.out.println("\n");
                 countFive += totalCount;
@@ -70,8 +71,9 @@ public class Main {
                 System.out.println("\n");
             }
 
-        } while (guessedNum.size() != 6);
-        totalCount = totalCount + countFour + countFive + countSix;
+        } while (guessedNum.size() != 6 && countSix != 1);
+        countSix = totalCount;
+        System.out.println("toate incercarile: " + totalCount);
         System.out.println("s-a castigat cu 4 numere dupa " + countFour + " de incercari ");
         System.out.println("s-a castigat cu 5 numere dupa " + countFive + " de incercari ");
         System.out.println("s-a castigat cu 6 numere dupa " + countSix + " de incercari ");
