@@ -23,19 +23,19 @@ public class Main {
 
             for (int i = 0; i < 6; i++) {
                 int winning = rand.nextInt(1, 49);
-                if (!winningNum.contains(winning)) {
-                    winningNum.add(winning);
+                if (winningNum.contains(winning)) {
+                   winning = rand.nextInt(1,49);
                 }
+                winningNum.add(winning);
             }
 
             System.out.println("================ 6 of 49 ================");
             System.out.println("=========================================");
 
             for (int i = 0; i < 6; i++) {
-                String numberString = String.valueOf(rand.nextInt(1, 49));
-                int number = Integer.parseInt(numberString);
-                if (numberString.contains(String.valueOf(number))) {
-                    numberString = String.valueOf(rand.nextInt(1, 49));
+               int number = rand.nextInt(1, 49);
+                if (guessedNum.contains(number)) {
+                    number = rand.nextInt(1, 49);
                 }
                 guessedNum.add(number);
             }
@@ -71,7 +71,7 @@ public class Main {
                 System.out.println("\n");
             }
 
-        } while (guessedNum.size() != 6 && countSix != 1);
+        } while (countSix != 1 );
         countSix = totalCount;
         System.out.println("toate incercarile: " + totalCount);
         System.out.println("s-a castigat cu 4 numere dupa " + countFour + " de incercari ");
