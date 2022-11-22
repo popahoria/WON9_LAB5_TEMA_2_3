@@ -25,6 +25,7 @@ public class Main {
                 int winning = rand.nextInt(1, 49);
                 if (winningNum.contains(winning)) {
                    winning = rand.nextInt(1,49);
+                   i--;
                 }
                 winningNum.add(winning);
             }
@@ -36,6 +37,7 @@ public class Main {
                int number = rand.nextInt(1, 49);
                 if (guessedNum.contains(number)) {
                     number = rand.nextInt(1, 49);
+                    i--;
                 }
                 guessedNum.add(number);
             }
